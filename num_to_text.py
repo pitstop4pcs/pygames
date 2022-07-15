@@ -112,8 +112,3 @@ def cardinal(number: int):
         if int(units) > 0 or int(units) == 0 and int(tens) != 0:
             hundreds_string += ' and '
     return hundreds_string + tens_string + units_string
-
-
-for i in range(1000):
-    print(cardinal(i))
-    print(ordinal(i))
