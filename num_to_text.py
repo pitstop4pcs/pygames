@@ -11,12 +11,6 @@ def ordinal(number: int):
         hundreds = number_string[len(number_string) - 3]
     else:
         hundreds = '0'
-    if len(number_string) > 3:
-        thousands = number_string[-6:-3]
-        if int(thousands) > 0:
-            thousands_string = cardinal(thousands) + ' thousand'
-            if int(number_string[-3:]) != 0 and int(number_string[-3:]) > 99:
-                thousands_string += ', '
     units_map = {
         0: 'th',
         1: 'First',
@@ -59,9 +53,6 @@ def ordinal(number: int):
         units_string = units_string.lower()
     if len(number_string) >= 3:
         tens_string = tens_string.lower()
-    if len(number_string) >= 4:
-        hundreds_string = hundreds_string.lower()
-
     return hundreds_string + tens_string + units_string
 
 
@@ -123,3 +114,6 @@ def cardinal(number: int):
     return hundreds_string + tens_string + units_string
 
 
+for i in range(1000):
+    print(cardinal(i))
+    print(ordinal(i))
